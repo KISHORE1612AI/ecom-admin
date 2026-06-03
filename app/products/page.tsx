@@ -23,7 +23,7 @@ export default function ProductsPage() {
 
   const categories = ["all", ...Array.from(new Set(initialProducts.map((p) => p.category)))];
 
-  // BUG 1: filter uses || instead of && — searching "shirt" in "Clothing" won't narrow both
+ 
   const filtered = products.filter((p) => {
     const matchSearch = p.name.toLowerCase().includes(search.toLowerCase());
     const matchCat = categoryFilter === "all" || p.category === categoryFilter;
@@ -57,7 +57,7 @@ export default function ProductsPage() {
         )
       );
     } else {
-      // BUG 2: new product gets a duplicate ID pattern that could clash
+      
       const newP: Product = {
         id: `P00${products.length + 1}`,
         name: form.name,
