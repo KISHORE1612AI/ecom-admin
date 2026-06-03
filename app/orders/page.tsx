@@ -18,7 +18,7 @@ export default function OrdersPage() {
   const [orders, setOrders] = useState(initialOrders);
   const [search, setSearch] = useState("");
   const [statusFilter, setStatusFilter] = useState("all");
-  // BUG 3: currentPage starts at 0 instead of 1, causing the first page to be page 0
+ 
   const [currentPage, setCurrentPage] = useState(0);
   const perPage = 5;
 
@@ -30,7 +30,7 @@ export default function OrdersPage() {
     return matchSearch && matchStatus;
   });
 
-  // BUG 4: totalPages is calculated before filtering, so pagination count is always wrong
+  
   const totalPages = Math.ceil(orders.length / perPage);
   const paginated = filtered.slice(currentPage * perPage, currentPage * perPage + perPage);
 
