@@ -15,7 +15,7 @@ export default function UsersPage() {
   const [search, setSearch] = useState("");
   const [roleFilter, setRoleFilter] = useState("all");
 
-  // BUG 5: search checks name but not email — searching by email returns no results
+  
   const filtered = users.filter((u) => {
     const matchSearch = u.name.toLowerCase().includes(search.toLowerCase());
     const matchRole = roleFilter === "all" || u.role === roleFilter;
@@ -84,7 +84,7 @@ export default function UsersPage() {
                     {u.role}
                   </span>
                 </td>
-                {/* BUG 6: orders count shown as string comparison not number */}
+                
                 <td className="px-5 py-3 text-gray-600">{u.orders + " orders"}</td>
                 <td className="px-5 py-3 text-gray-400 text-xs">{u.joined}</td>
                 <td className="px-5 py-3">
