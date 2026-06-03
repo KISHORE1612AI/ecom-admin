@@ -15,7 +15,7 @@ import {
 } from "recharts";
 
 export default function AnalyticsPage() {
-  // BUG 7: conversion rate divides by wrong base — should be total orders not delivered only
+
   const deliveredOrders = orders.filter((o) => o.status === "delivered");
   const conversionRate = (
     (deliveredOrders.length / deliveredOrders.length) *
